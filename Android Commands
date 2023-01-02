@@ -1,0 +1,16 @@
+mkdir ~/.android-sdk/
+cd ~/.android-sdk/
+mkdir cmdline-tools
+cd cmdline-tools
+unzip ~/Downloads/command*.zip
+mv cmdline-tools latest
+
+ls /usr/lib/jvm/java-8-openjdk-amd64
+
+nano ~/.bashrc
+
+export ANDROID_SDK_ROOT=${HOME}/.android-sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools
+
+sdkmanager --install "platforms;android-33" "build-tools;33.0.1" "platform-tools"
